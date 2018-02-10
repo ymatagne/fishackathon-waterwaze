@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.json({users: [{name: 'Timmy'}]});
+  res.json({user: req.user});
 });
 
 router.post('/', (req, res) => {
