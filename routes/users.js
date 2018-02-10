@@ -9,6 +9,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res) => {
+  User.register(new User({ username: req.body.username }), req.body.password, (err, acc) => {
+    if (err) {
+      return res.json({success: false});
+    }
+
+    passport.authenticate('local')(req, res, () => {
+      res.json({success: true});
+    });
+  });
 });
 
 module.exports = router;
