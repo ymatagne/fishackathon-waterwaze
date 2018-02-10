@@ -19,12 +19,15 @@ router.get('/', (req, res) => {
     type: 'dam',
     location: {
       type: 'Point',
-      coordinates: [0, 0]
+      coordinates: [43.652829700000005, -79.3836673]
     },
     details: {
       image: 'https://www.placecage.com/c/300/300'
     }
   }]);
+});
+
+router.post('/', (req, res) => {
 });
 
 module.exports = router;
