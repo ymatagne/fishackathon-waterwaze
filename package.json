@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build && nodemon ./bin/www",
+    "debug": "ng build && node inspect ./bin/www",
     "startFront": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
