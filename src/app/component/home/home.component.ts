@@ -8,6 +8,7 @@ import { Routes, RouterModule, Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  public idx;
   constructor(private router: Router) { }
 
   ngOnInit() {
