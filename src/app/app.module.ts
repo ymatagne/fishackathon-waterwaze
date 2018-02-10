@@ -12,6 +12,8 @@ import { routes } from './app-routing.module';
 import { GeolocalisationService } from './services/geolocalisation.service';
 import { EventsService } from './services/events.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot(
       routes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [GeolocalisationService, EventsService],
   bootstrap: [AppComponent]

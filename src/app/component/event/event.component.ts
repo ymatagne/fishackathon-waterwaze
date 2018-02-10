@@ -16,7 +16,7 @@ export class EventComponent implements OnInit {
     this.event = new Event();
     geoService.location$.subscribe(
       location => {
-        this.event.geoPoint = location;
+        this.event.location = location;
       });
   }
 
@@ -24,8 +24,7 @@ export class EventComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("test");
-    this.eventsService.create(this.event);
+    this.eventsService.create(this.event).subscribe(() => { });
   }
 
 }

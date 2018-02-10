@@ -2,8 +2,8 @@
   <div>
     <input type="text" name="event.type" placeholder="Type" id="type" required [(ngModel)]="event.type" autocomplete="off">
   </div>
-  <div *ngIf="event.geoPoint">
-    <input type=" text " name="event.geoPoint.coordinates " id="type " required [(ngModel)]="event.geoPoint.coordinates
+  <div *ngIf="event.location">
+    <input type=" text " name="event.location.coordinates " id="type " required [(ngModel)]="event.location.coordinates
     " autocomplete="off ">
   </div>
   <button type="submit">Submit</button>

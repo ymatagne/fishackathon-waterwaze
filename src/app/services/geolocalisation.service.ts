@@ -10,6 +10,15 @@ export class GeolocalisationService {
   location$ = this.location.asObservable();
 
   constructor() {
+    this.getYourPosition();
+    navigator.geolocation.watchPosition((position) => {
+      var geoPoint = new GeoPoint();
+      geoPoint.coordinates = [position.coords.longitude, position.coords.latitude];
+      this.location.next(geoPoint);
+    })
+  }
+
+  getYourPosition(){
     navigator.geolocation.getCurrentPosition((position) => {
       var geoPoint = new GeoPoint();
       geoPoint.coordinates = [position.coords.longitude, position.coords.latitude];

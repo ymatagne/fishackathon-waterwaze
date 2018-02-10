@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, RouterModule, Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public idx;
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  swipe(id, type) {
+    switch (type) {
+      case "swipeleft":
+        this.router.navigate(['event']);
+        return;
+      case "swiperight":
+        this.router.navigate(['map']);
+        return;
+    }
+  }
 }
