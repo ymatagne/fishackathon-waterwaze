@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const Event = new Schema({
-  type: String,
+  type: { type: String, required: true },
   location: {
     type: { type: String },
     coordinates: [Number],

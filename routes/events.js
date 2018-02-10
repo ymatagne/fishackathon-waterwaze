@@ -28,6 +28,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  const ev = new Event(req.body);
+  ev.save(function(err, ev) {
+    if (err) {
+      res.json({success: false});
+    } else {
+      res.json({success: true});
+    }
+  });
 });
 
 module.exports = router;
