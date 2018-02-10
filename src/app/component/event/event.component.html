@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+  <div>
+    <input type="text" name="event.type" placeholder="Type" id="type" required [(ngModel)]="event.type" autocomplete="off">
+  </div>
+  <div *ngIf="event.geoPoint">
+    <input type=" text " name="event.geoPoint.coordinates " id="type " required [(ngModel)]="event.geoPoint.coordinates
+    " autocomplete="off ">
+  </div>
+  <button type="submit " [disabled]="!eventForm.form.valid ">Submit</button>
+</form>
