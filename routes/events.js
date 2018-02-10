@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     type: 'dam',
     location: {
       type: 'Point',
-      coordinates: [43.652829700000005, -79.3836673]
+      coordinates: [-79.3836673, 43.652829700000005]
     },
     details: {
       image: 'https://www.placecage.com/c/300/300'
