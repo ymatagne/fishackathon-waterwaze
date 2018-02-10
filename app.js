@@ -10,6 +10,7 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const users = require('./routes/users');
 const events = require('./routes/events');
+const upload = require('./routes/upload');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api/v1/users', users);
 app.use('/api/v1/events', events);
+app.use('/api/v1/upload', upload);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
