@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GeolocalisationService } from '../../services/geolocalisation.service';
+import { EventsService } from '../../services/events.service';
 
 @Component({
   selector: 'app-map',
@@ -15,11 +16,14 @@ export class MapComponent implements OnInit {
     this.zoom = 16;
   }
 
-  constructor(public geoService: GeolocalisationService) {
+  constructor(public geoService: GeolocalisationService, public eventService: EventsService) {
     geoService.location$.subscribe(
       location => {
         this.lat = location.coordinates[0];
         this.lng = location.coordinates[1];
       });
+    this.eventService.getAllEvents().subscribe((data) => {
+
+    })
   }
 }

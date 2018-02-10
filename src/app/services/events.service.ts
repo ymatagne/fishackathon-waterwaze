@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Event } from '../models/event';
@@ -32,6 +32,10 @@ export class EventsService {
       localStorage.setItem("waterwatchoffline", JSON.stringify(event));
       return new Observable(null);
     }
+  }
+
+  getAllEvents(): Observable<Object> {
+    return this.http.get('/api/v1/events');
   }
 
   private handleError(error: HttpErrorResponse) {

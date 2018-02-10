@@ -1,3 +1,11 @@
-<agm-map *ngIf="lat" [latitude]="lat" [longitude]="lng" [zoom]="zoom" >
+<agm-map *ngIf="lat" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-marker *ngFor="let event of events; let i = index" [latitude]="event.location.coords[0]" [longitude]="event.location.coords[1]"
+    [label]="event.text">
+
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+
+  </agm-marker>
 </agm-map>
