@@ -3,14 +3,15 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Event } from '../models/event';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EventsService {
 
   constructor(private http: HttpClient) { }
 
-  create(event: Event) {
-    this.http.post<Event>('/api/v1/events', event)
+  create(event: Event): Observable<Event> {
+    return this.http.post<Event>('/api/v1/events', event)
       .pipe(
       catchError(this.handleError)
       );

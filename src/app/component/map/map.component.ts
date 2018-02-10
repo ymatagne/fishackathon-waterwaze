@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeolocalisationService } from '../../services/geolocalisation.service';
 
 @Component({
   selector: 'app-map',
@@ -12,13 +13,13 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     this.zoom = 16;
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-    })
   }
 
-  clickOnTheMap(event) {
-    console.log(event);
+  constructor(public geoService: GeolocalisationService) {
+    geoService.location$.subscribe(
+      location => {
+        this.lat = location.coordinates[0];
+        this.lng = location.coordinates[1];
+      });
   }
 }
