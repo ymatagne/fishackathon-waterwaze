@@ -4,32 +4,15 @@ const router = express.Router();
 const Event = require('../models/event');
 
 router.get('/', (req, res) => {
-  res.json([{
-    type: 'fish',
-    location: {
-      type: 'Point',
-      coordinates: [0, 0]
-    },
-    details: {
-      length: 100,
-      weight: 5.4,
-      image: 'https://www.placecage.com/c/300/300'
-    }
-  }, {
-    type: 'dam',
-    location: {
-      type: 'Point',
-      coordinates: [-79.3836673, 43.652829700000005]
-    },
-    details: {
-      image: 'https://www.placecage.com/c/300/300'
-    }
-  }]);
+  Event.find((err, evnt) => {
+    if (err) res.json({success: false});
+    res.json(evnt);
+  });
 });
 
 router.post('/', (req, res) => {
   const ev = new Event(req.body);
-  ev.save(function(err, ev) {
+  ev.save((err, ev) => {
     if (err) {
       res.json({success: false});
     } else {
