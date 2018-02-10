@@ -13,10 +13,7 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@agm/core": "^1.0.0-beta.2",
->>>>>>> feat(event): create page and eventservice
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -30,17 +27,13 @@
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
-<<<<<<< HEAD
     "express-session": "^1.15.6",
-    "mongodb": "^3.0.2",
     "mongoose": "^5.0.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",
-=======
     "hammerjs": "^2.0.8",
     "mongodb": "^3.0.2",
->>>>>>> feat(event): create page and eventservice
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
