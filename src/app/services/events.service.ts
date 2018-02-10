@@ -7,14 +7,31 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EventsService {
+  isOnline: Boolean;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.isOnline = navigator.onLine ? true : false;
+    var http = this.http;
+    window.addEventListener("online", function () {
+      console.log("online");
+      var dataToSend: Event = JSON.parse(localStorage.getItem("waterwatchoffline"))
+      if (dataToSend) {
+        http.post<Event>('/api/v1/events', dataToSend).subscribe(() => { console.log("Data send") });
+        localStorage.remove('waterwatchoffline');
+      }
+    }, false);
+  }
 
   create(event: Event): Observable<Event> {
-    return this.http.post<Event>('/api/v1/events', event)
-      .pipe(
-      catchError(this.handleError)
-      );
+    if (this.isOnline) {
+      return this.http.post<Event>('/api/v1/events', event)
+        .pipe(
+        catchError(this.handleError)
+        );
+    } else {
+      localStorage.setItem("waterwatchoffline", JSON.stringify(event));
+      return new Observable(null);
+    }
   }
 
   private handleError(error: HttpErrorResponse) {
