@@ -1,9 +1,10 @@
 const express = require('express');
 const passport = require('passport');
-const User = require('../models/user');
 const router = express.Router();
+const User = require('../models/user');
+const Event = require('../models/event');
 
-/* GET users listing. */
+/* GET user listing. */
 router.get('/', (req, res, next) => {
   res.json({user: req.user});
 });
@@ -16,7 +17,14 @@ router.post('/', (req, res) => {
     }
 
     passport.authenticate('local')(req, res, () => {
-      res.json({success: true});
+      const userEv = new Event({type: 'user', username: req.body.username, location: req.body.location});
+      userEv.save((err, ev) => {
+        if (err) {
+          return res.json({success: false});
+        } else {
+          res.json({success: true});
+        }
+      });
     });
   });
 });
