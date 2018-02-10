@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
   res.json({user: req.user});
 });
 
+//create user
 router.post('/', (req, res) => {
   User.register(new User({ username: req.body.username }), req.body.password, (err, acc) => {
     if (err) {
