@@ -11,6 +11,7 @@ import { HomeComponent } from './component/home/home.component';
 import { routes } from './app-routing.module';
 import { GeolocalisationService } from './services/geolocalisation.service';
 import { EventsService } from './services/events.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EventsService } from './services/events.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD9Wf_SdMfHT-PLengQFgBvC7eb2HERL38'
     }),
+    HttpClientModule,
     RouterModule.forRoot(
       routes,
       { enableTracing: true } // <-- debugging purposes only

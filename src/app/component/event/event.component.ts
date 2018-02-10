@@ -24,6 +24,7 @@ export class EventComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log("test");
     this.eventsService.create(this.event);
   }
 

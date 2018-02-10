@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { Event } from '../models/event';
 
 @Injectable()
 export class EventsService {
@@ -9,7 +10,7 @@ export class EventsService {
   constructor(private http: HttpClient) { }
 
   create(event: Event) {
-    this.http.post<Event>('/events', event)
+    this.http.post<Event>('/api/v1/events', event)
       .pipe(
       catchError(this.handleError)
       );
