@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
 
 var users = require('./routes/users');
 
