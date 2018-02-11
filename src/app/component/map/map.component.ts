@@ -47,7 +47,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  swipe(id, type) {
+  swipe(type) {
     switch (type) {
       case "swipeleft":
         this.router.navigate(['']);
