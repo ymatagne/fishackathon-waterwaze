@@ -15,7 +15,7 @@ export class UserService {
       user.username = new Date().getTime().toString();
       user.password = 'password';
       user.location = geoPoint;
-      this.http.post<Event>('/api/v1/user', user).subscribe(() => { console.log("Data send") });
+      this.http.post<User>('/api/v1/users', user).subscribe(() => { console.log("Data send") });
     }
   }
 }
