@@ -1,0 +1,33 @@
+.home{
+    background: url(/assets/are-r-220395.jpg)no-repeat center;
+    margin: auto;
+    background-size: cover;
+    height: 100%;
+    background-position-y: 250px;
+    background-position-x: -406px;   
+    background-color: #f4f9fc;
+
+}
+.logo{
+    height: 20vh;
+    width: 100%;
+    opacity: 1;
+    background: url(/assets/logo.svg) no-repeat;
+    background-size: 20vh 20vh;
+    background-position: center;
+}
+.titleLogo{
+    padding-top: 20vh;
+    text-align: center;
+    color: rgb(55, 55, 55);
+    margin-left: 0vh;
+    padding-bottom: 3vh;
+    font-size: 9vw;
+    margin: 0;
+}
+.nav{
+    padding-top: 20vh
+}
+.homeBtn{
+    margin-top: 10vh;
+}

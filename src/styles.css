@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family:'Avenir';
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('/static/Karla/Karla-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('/static/Karla/Karla-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('/static/Karla/Karla-BoldItalic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url('/static/Avenir/Avenir Heavy.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+em {
+    font-family: 'Avenir';
+    font-weight: normal;
+    font-size: 1.2rem;
+    color:rgb(247,246,245);
+}
+
+html{
+    font-family: 'Avenir';
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body{
+    margin:auto;
+    height: 100vh;
+}
+
+.bttopaz {
+    background-color: rgb(20,200,163);
+    padding: 13px;
+    margin: auto;
+    height: 30px;
+    width: 240px;
+    border-radius: 30px;
+    text-align: center;
+}
+p{
+    margin: auto;
+    padding: 1.5vw 2vw 2.5vw 2vw;
+    margin-top: -1vw;
+    height: 6vw;
+    color:rgb(247,246,245);
+}
+
+.btblue {
+    background-color: rgb(45,48,202);
+    padding: 13px;
+    margin: auto;
+    height: 30px;
+    width: 240px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.btTopazEmpty {
+    background-color: rgb(20,200,163);
+    padding: 13px;
+    margin: auto;
+    height: 30px;
+    width: 240px;
+    border-radius: 30px;
+    text-align: center;
+}

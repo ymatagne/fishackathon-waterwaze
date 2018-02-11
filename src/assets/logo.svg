@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="111px" height="55px" viewBox="0 0 111 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>logo copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="21.3784074%" y1="4.0834719%" x2="81.1197101%" y2="97.3642885%" id="linearGradient-1">
+            <stop stop-color="#5D80B3" offset="0%"></stop>
+            <stop stop-color="#14C8A3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-40.5131754%" y1="-73.5182601%" x2="81.1197101%" y2="97.3642885%" id="linearGradient-2">
+            <stop stop-color="#001C54" offset="0%"></stop>
+            <stop stop-color="#14C8A3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-165.000000, -117.000000)">
+        <g id="logo-copy" transform="translate(155.000000, 102.000000)">
+            <ellipse id="Oval-5-Copy-2" cx="49.5" cy="47" rx="49.5" ry="47"></ellipse>
+            <path d="M13,16 C20.1960767,42.9724014 27.7748384,57.0387201 35.7362852,58.1989562 C47.6784554,59.9393104 46.1079778,50.6608642 59.5686385,50.6608642 C72.2952415,50.6608642 76.2939753,69.132473 95,66.7955948 C96.0789446,66.6608061 113,61 117,48" id="Path-4-Copy-8" stroke="url(#linearGradient-1)" stroke-width="6"></path>
+            <path d="M13,16 C20.0049565,39.6841483 27.4293797,52.1026192 35.2732696,53.2554127 C47.0391044,54.9846029 45.4918162,45.7656756 58.7537198,45.7656756 C72.0156234,45.7656756 75.657961,66.2970306 97,61.1812956 C106.312703,57.9597302 113.136923,50.565965 117.47266,39" id="Path-4-Copy-6" stroke="url(#linearGradient-2)" stroke-width="6"></path>
+            <path d="" id="Path-3-Copy-2" stroke="#979797"></path>
+        </g>
+    </g>
+</svg>
