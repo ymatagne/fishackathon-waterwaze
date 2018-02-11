@@ -17,6 +17,8 @@ import { environment } from '../environments/environment';
 import { UserService } from './services/user.service';
 import { PictureComponent } from './component/picture/picture.component';
 import { PictureService } from './services/picture.service';
+import { LogCatchComponent } from './component/log-catch/log-catch.component';
+import { ProgressbarComponent } from './component/progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PictureService } from './services/picture.service';
     MapComponent,
     EventComponent,
     HomeComponent,
-    PictureComponent
+    PictureComponent,
+    LogCatchComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,

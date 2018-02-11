@@ -1,0 +1,16 @@
+.background{
+    border: rgb(20,200,163) 1px solid;
+    border-radius: 25px;
+    height: 2vh;
+    width:100%;
+    margin: auto;
+}
+p{
+    color: rgb(55,55,55);
+    font-size: 2vh;
+}
+.progressBar{
+    background-color:rgb(20,200,163);
+    height: 2vh;
+    border-radius: 25px;
+}

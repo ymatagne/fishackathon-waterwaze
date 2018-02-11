@@ -1,0 +1,35 @@
+h2{
+    text-align: center;
+    margin-top: 0;
+}
+.icon{
+    background-image: url("/assets/keyboard-left-arrow-button.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 3vh;
+}
+.page{
+    margin: 4vh;
+    height: 92vh;
+}
+footer{
+    position: absolute;
+    height: 10vh;
+    bottom: 0;
+    width: 88vw;    
+}
+.button-picture{
+    height: 10vh;
+    display: block;
+    margin: 0 auto;
+}
+.picture{
+    display: block;
+    width: 100vw;
+    height: 66vh;
+    margin-left: -4vh;
+    object-fit: cover;
+}
+agm-map {
+    height: 15vh;
+}

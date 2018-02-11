@@ -10,6 +10,10 @@ const Event = new Schema({
   },
   details: {
     image: String,
+    heigth: String,
+    weigth: String,
+    type: String,
+    date: String,
   },
 });
 

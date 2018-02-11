@@ -1,0 +1,59 @@
+<div class="page" (swiperight)="swipe(idx, $event.type)">
+  <header>
+    <h2 class="icon">Log Catch</h2>
+    <app-progressbar [idx]="idx" [steps]="steps"></app-progressbar>
+  </header>
+
+  <div *ngIf="idx!==2" class="divPicture">
+    <img class="picture" [src]="imageData" *ngIf="imageData" />
+  </div>
+  <div *ngIf="idx==2" class="divPicture">
+    <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false [zoomControl]=false
+      [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [zoom]="14">
+      <agm-marker [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]"></agm-marker>
+    </agm-map>
+    <form #eventForm="ngForm">
+      <h3>Add a description</h3>
+      <div>
+        <label>Type of Fich</label>
+        <input type="text" name="event.detail.type" id="type" required [(ngModel)]="event.detail.type" autocomplete="off">
+      </div>
+      <div>
+        <label>Length</label>
+        <input type="text" name="event.detail.length" id="length" required [(ngModel)]="event.detail.length" autocomplete="off">
+      </div>
+      <div>
+        <label>Weight (optional)</label>
+        <input type="text" name="event.detail.weight" id="weight" required [(ngModel)]="event.detail.weight" autocomplete="off">
+      </div>
+    </form>
+  </div>
+
+  <footer *ngIf="idx==0">
+    <img class="button-picture" (click)="imgFileInput.click()" src="/assets/photo-camera.png" />
+    <input hidden type="file" accept="image/*;capture=camera" #imgFileInput (change)="readUrl($event)" />
+  </footer>
+  <footer *ngIf="idx==1">
+    <div class="line">
+      <div class="btnGrey">
+        <a (click)="idx=0">Change Photo</a>
+      </div>
+      <div class="homeBtn btblue small">
+        <a (click)="idx=2">
+          <p>
+            <em>Continue</em>
+          </p>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <footer *ngIf="idx==2">
+    <div class="homeBtn btblue">
+      <a (click)="submit()">
+        <p>
+          <em>LOG CATCH</em>
+        </p>
+      </a>
+    </div>
+  </footer>
+</div>

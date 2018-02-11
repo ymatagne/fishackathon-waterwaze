@@ -1,11 +1,11 @@
-<div class="home">
+<div class="home" (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
   <div class="logo">
     <h1 class="titleLogo">Water Watch</h1>
   </div>
 
   <div class="nav">
     <div class="bttopaz">
-      <a routerLink="map">
+      <a routerLink="logcatch">
         <p>
           <em>Log Catch</em>
         </p>

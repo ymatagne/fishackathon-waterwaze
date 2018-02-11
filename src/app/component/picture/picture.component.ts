@@ -11,19 +11,23 @@ export class PictureComponent implements OnInit {
 
   @ViewChild('fileInput') fileInput;
 
+  imageData: any;
+  isImageSelected = false;
+
   constructor(private pictureService: PictureService) { }
 
   ngOnInit() {
   }
+  readUrl(event) {
+    if (event.target.files && event.target.files[0]) {
+      this.isImageSelected = true;
+      const reader = new FileReader();
 
-  upload() {
-    let fileBrowser = this.fileInput.nativeElement;
-    if (fileBrowser.files && fileBrowser.files[0]) {
-      const formData = new FormData();
-      formData.append("image", fileBrowser.files[0]);
-      this.pictureService.upload(formData).subscribe(res => {
-        console.log(res)
-      });
+      reader.onload = (event: any) => {
+        this.imageData = event.target.result;
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
 

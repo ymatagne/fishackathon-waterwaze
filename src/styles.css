@@ -12,19 +12,19 @@
 }
 @font-face {
     font-family: 'Karla';
-    src: url('/static/Karla/Karla-Bold.ttf');
+    src: url('/assets/Karla/Karla-Bold.ttf');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'Karla';
-    src: url('/static/Karla/Karla-BoldItalic.ttf');
+    src: url('/assets/Karla/Karla-BoldItalic.ttf');
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
     font-family: 'Avenir';
-    src: url('/static/Avenir/Avenir Heavy.otf');
+    src: url('/assets/Avenir/Avenir_Heavy.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -83,6 +83,13 @@ p{
     text-align: center;
 }
 
+.small{
+    width: 30vw;
+    height: 20px;
+}
+.small>a>p{
+    margin-top: -2vw;
+}
 .btTopazEmpty {
     background-color: rgb(20,200,163);
     padding: 13px;
@@ -91,4 +98,24 @@ p{
     width: 240px;
     border-radius: 30px;
     text-align: center;
+}
+.btnGrey{
+    color: rgb(55,55,55);
+    margin: auto;
+}
+.line{
+    display: flex;
+    margin-top: 2vh;
+}
+label{
+    color:rgb(55,55,55);
+    margin-top: 2vh;
+}
+input{
+    color: rgb(151,151,151);
+    border: rgb(151,151,151) 1px solid;
+    border-radius: 5pt;
+    width: 80vw;
+    height: 5vh;
+    margin-bottom: 2vh;
 }

@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   swipe(id, type) {
     switch (type) {
       case "swipeleft":
-        this.router.navigate(['event']);
+        this.router.navigate(['logcatch']);
         return;
       case "swiperight":
         this.router.navigate(['map']);
