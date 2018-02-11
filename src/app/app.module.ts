@@ -15,13 +15,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UserService } from './services/user.service';
+import { PictureComponent } from './component/picture/picture.component';
+import { PictureService } from './services/picture.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     EventComponent,
-    HomeComponent
+    HomeComponent,
+    PictureComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { UserService } from './services/user.service';
     }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [GeolocalisationService, EventsService, UserService],
+  providers: [GeolocalisationService, EventsService, UserService, PictureService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
