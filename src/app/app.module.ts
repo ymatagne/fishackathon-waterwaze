@@ -17,6 +17,7 @@ import { UserService } from './services/user.service';
 import { PictureService } from './services/picture.service';
 import { LogCatchComponent } from './component/log-catch/log-catch.component';
 import { ProgressbarComponent } from './component/progressbar/progressbar.component';
+import { ReportIncidentComponent } from './component/report-incident/report-incident.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProgressbarComponent } from './component/progressbar/progressbar.compon
     MapComponent,
     HomeComponent,
     LogCatchComponent,
-    ProgressbarComponent
+    ProgressbarComponent,
+    ReportIncidentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,90 @@
+<div class="page" (swiperight)="swipe(idx, $event.type)">
+  <header>
+    <h2 class="icon">Report Incident</h2>
+    <app-progressbar [idx]="idx" [steps]="steps"></app-progressbar>
+  </header>
+
+  <div *ngIf="idx==0" class="divPicture">
+    <div class="nav">
+      <div class="homeBtn btWhite">
+        <a (click)="setEvent('invasive')">
+          <p>
+            <em>Invasive Species</em>
+          </p>
+        </a>
+      </div>
+
+      <div class="homeBtn btWhite">
+        <a (click)="setEvent('waterway')">
+          <p>
+            <em>Blocked Waterway</em>
+          </p>
+        </a>
+      </div>
+      <div class="homeBtn btWhite">
+        <a (click)="setEvent('pollution')">
+          <p>
+            <em>Pollution / Spill</em>
+          </p>
+        </a>
+      </div>
+      <div class="homeBtn btWhite">
+        <a (click)="setEvent('algae')">
+          <p>
+            <em>Algae</em>
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="idx==1 || idx==2" class="divPicture">
+    <img class="picture" [src]="imageData" *ngIf="imageData" />
+  </div>
+  <div *ngIf="idx==3" class="divPicture">
+    <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false
+      [zoomControl]=false [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [zoom]="14">
+      <agm-marker [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [iconUrl]="getIcon(event)"></agm-marker>
+    </agm-map>
+    <form #eventForm="ngForm">
+      <div *ngIf="event.type=='invasive'">
+        <h2 class="iconInvasive">Invasive Species</h2>
+      </div>
+      <div *ngIf="event.type=='waterway'">
+        <h2 class="iconWaterway">Blocked Waterway</h2>
+      </div>
+      <div *ngIf="event.type=='pollution'">
+        <h2 class="iconPollution">Pollution / Spill</h2>
+      </div>
+      <div *ngIf="event.type=='algae'">
+        <h2 class="iconAlgae">Algae</h2>
+      </div>
+    </form>
+  </div>
+  <footer *ngIf="idx==1">
+    <img class="button-picture" (click)="imgFileInput.click()" src="/assets/photo-camera.png" />
+    <input hidden type="file" accept="image/*;capture=camera" #imgFileInput (change)="readUrl($event)" />
+  </footer>
+  <footer *ngIf="idx==2">
+    <div class="line">
+      <div class="btnGrey">
+        <a (click)="idx=1">Change Photo</a>
+      </div>
+      <div class="homeBtn btblue small">
+        <a (click)="continue()">
+          <p>
+            <em>Continue</em>
+          </p>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <footer *ngIf="idx==3">
+    <div class="homeBtn btblue">
+      <a (click)="submit()">
+        <p>
+          <em>SUBMIT ALERT</em>
+        </p>
+      </a>
+    </div>
+  </footer>
+</div>

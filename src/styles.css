@@ -99,6 +99,19 @@ p{
     border-radius: 30px;
     text-align: center;
 }
+.btWhite {
+    border: rgb(20,200,163) 1px solid;
+    padding: 13px;
+    margin: auto;
+    height: 30px;
+    width: 240px;
+    border-radius: 30px;
+    text-align: center;
+    margin-top:5vh;
+}
+.btWhite>a>p>em{
+    color: rgb(20,200,163);
+}
 .btnGrey{
     color: rgb(55,55,55);
     margin: auto;
