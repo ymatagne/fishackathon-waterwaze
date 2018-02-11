@@ -8,14 +8,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng build && nodemon ./bin/www",
-    "startProd": "ng build --prod && node ./bin/www",
+    "startProd": "node ./bin/www",
     "debug": "ng build && node inspect ./bin/www",
     "startFront": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "npm install -g @angular/cli"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
