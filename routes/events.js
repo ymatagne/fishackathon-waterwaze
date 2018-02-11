@@ -12,7 +12,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const ev = new Event(req.body);
+  console.log(ev);
+
   ev.save((err, ev) => {
+    console.log(err);
     if (err) {
       res.json({success: false});
     } else {

@@ -4,7 +4,7 @@ const multer = require('multer');
 const upload = multer({ dest: 'img/' });
 const router = express.Router();
 
-router.post('/', upload.single('image'), (req, res) => {
+router.post('/', upload.single('file'), (req, res) => {
   if (req.file) {
     res.json({success: true, path: req.file.path});
   } else {

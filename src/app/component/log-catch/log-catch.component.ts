@@ -19,6 +19,7 @@ export class LogCatchComponent implements OnInit {
   public idx: Number = 0;
   imageData: any;
   isImageSelected = false;
+  fileToUpload: File;
   @ViewChild('fileInput') fileInput;
 
   constructor(private router: Router, private pictureService: PictureService, private eventService: EventsService, private geoService: GeolocalisationService) { }
@@ -26,8 +27,8 @@ export class LogCatchComponent implements OnInit {
   ngOnInit() {
     this.event = new Event();
     this.event.type = "catch";
-    this.event.detail = new Detail();
-    this.event.detail.date = String(Date.now());
+    this.event.details = new Detail();
+    this.event.details.date = (Date.now()).toString();
     this.geoService.location$.subscribe(
       location => {
         this.event.location = location;
@@ -38,6 +39,7 @@ export class LogCatchComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       this.isImageSelected = true;
       const reader = new FileReader();
+      this.fileToUpload = event.target.files[0];
 
       reader.onload = (event: any) => {
         this.imageData = event.target.result;
@@ -57,6 +59,13 @@ export class LogCatchComponent implements OnInit {
     }
   }
 
+  continue() {
+    this.idx = 2;
+    this.pictureService.upload(this.fileToUpload).subscribe((response) => {
+      console.log(response)
+      this.event.details.image = response.path;
+    });
+  }
   submit() {
     console.log(this.event);
     this.eventService.create(this.event).subscribe(() => {

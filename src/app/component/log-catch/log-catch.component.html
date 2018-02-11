@@ -16,15 +16,15 @@
       <h3>Add a description</h3>
       <div>
         <label>Type of Fich</label>
-        <input type="text" name="event.detail.type" id="type" required [(ngModel)]="event.detail.type" autocomplete="off">
+        <input type="text" name="event.details.type" id="type" required [(ngModel)]="event.details.type" autocomplete="off">
       </div>
       <div>
         <label>Length</label>
-        <input type="text" name="event.detail.length" id="length" required [(ngModel)]="event.detail.length" autocomplete="off">
+        <input type="number" name="event.details.length" id="length" required [(ngModel)]="event.details.length" autocomplete="off">
       </div>
       <div>
         <label>Weight (optional)</label>
-        <input type="text" name="event.detail.weight" id="weight" required [(ngModel)]="event.detail.weight" autocomplete="off">
+        <input type="number" name="event.details.weigth" id="weigth" required [(ngModel)]="event.details.weigth" autocomplete="off">
       </div>
     </form>
   </div>
@@ -39,7 +39,7 @@
         <a (click)="idx=0">Change Photo</a>
       </div>
       <div class="homeBtn btblue small">
-        <a (click)="idx=2">
+        <a (click)="continue()">
           <p>
             <em>Continue</em>
           </p>

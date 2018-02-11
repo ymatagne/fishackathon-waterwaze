@@ -8,8 +8,12 @@ export class PictureService {
 
   constructor(private http: HttpClient) { }
 
-  upload(formData) {
-    return this.http.post<Event>('/api/v1/upload', event)
+  upload(file) {
+    const endpoint = 'your-destination-url';
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http
+      .post('/api/v1/upload', formData)
       .pipe(
       catchError(this.handleError)
       );

@@ -9,11 +9,10 @@ const Event = new Schema({
     coordinates: [Number],
   },
   details: {
-    image: String,
-    heigth: String,
-    weigth: String,
-    type: String,
-    date: String,
+    image: { type: String },
+    heigth: { type: String },
+    weigth: { type: String },
+    type: { type: String }
   },
 });
 
