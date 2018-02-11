@@ -15,7 +15,7 @@ import { Detail } from '../../models/detail';
 export class LogCatchComponent implements OnInit {
   public event: Event;
 
-  public steps = [{ name: 'Step 1/3 Take a photo' }, { name: 'Step 2/3 Confirm Photo' }, { name: 'Step 3/3 Fish Details' }]
+  public steps = ['Step 1/3 Take a photo', 'Step 2/3 Confirm Photo', 'Step 3/3 Fish Details']
   public idx: Number = 0;
   imageData: any;
   isImageSelected = false;

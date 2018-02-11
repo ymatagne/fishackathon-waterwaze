@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './component/map/map.component';
-import { EventComponent } from './component/event/event.component';
 import { HomeComponent } from './component/home/home.component';
 import { routes } from './app-routing.module';
 import { GeolocalisationService } from './services/geolocalisation.service';
@@ -15,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UserService } from './services/user.service';
-import { PictureComponent } from './component/picture/picture.component';
 import { PictureService } from './services/picture.service';
 import { LogCatchComponent } from './component/log-catch/log-catch.component';
 import { ProgressbarComponent } from './component/progressbar/progressbar.component';
@@ -24,9 +22,7 @@ import { ProgressbarComponent } from './component/progressbar/progressbar.compon
   declarations: [
     AppComponent,
     MapComponent,
-    EventComponent,
     HomeComponent,
-    PictureComponent,
     LogCatchComponent,
     ProgressbarComponent
   ],

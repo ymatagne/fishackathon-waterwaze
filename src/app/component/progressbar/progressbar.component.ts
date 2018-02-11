@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProgressbarComponent implements OnInit {
 
   @Input() idx: number;
-  @Input() steps: Array<Object>;
+  @Input() steps: Array<String>;
 
   constructor() { }
 

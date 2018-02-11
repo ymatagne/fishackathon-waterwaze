@@ -1,8 +1,0 @@
-<div class="divPicture">
-    <img class="picture" [src]="imageData" *ngIf="imageData" />
-</div>
-
-<footer>
-    <img  class="button-picture" (click)="imgFileInput.click()" src="/assets/photo-camera.png"/>
-    <input hidden type="file" accept="image/*;capture=camera" #imgFileInput (change)="readUrl($event)" />
-</footer>
