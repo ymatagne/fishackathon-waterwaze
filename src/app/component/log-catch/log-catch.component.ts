@@ -7,13 +7,15 @@ import { Event } from '../../models/event';
 import { EventsService } from '../../services/events.service';
 import { Detail } from '../../models/detail';
 import { GeoPoint } from '../../models/geoPoint';
+import { ElementRef } from '@angular/core';
+import { AfterContentInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-log-catch',
   templateUrl: './log-catch.component.html',
   styleUrls: ['./log-catch.component.css']
 })
-export class LogCatchComponent implements OnInit {
+export class LogCatchComponent implements OnInit, AfterContentInit {
   public event: Event;
 
   public steps = ['Step 1/3 Take a photo', 'Step 2/3 Confirm Photo', 'Step 3/3 Fish Details']
@@ -21,7 +23,10 @@ export class LogCatchComponent implements OnInit {
   imageData: any;
   isImageSelected = false;
   fileToUpload: File;
-  @ViewChild('fileInput') fileInput;
+  @ViewChild('canvas') canvas: HTMLCanvasElement;
+  @ViewChild('video') video: HTMLVideoElement;
+  @ViewChild('video') media: HTMLElement;
+
 
   constructor(private router: Router, private pictureService: PictureService, private eventService: EventsService, private geoService: GeolocalisationService) { }
 
@@ -32,6 +37,20 @@ export class LogCatchComponent implements OnInit {
     this.event.details.date = (Date.now()).toString();
     this.event.location = this.geoService.getYourPosition();
     var event = this.event;
+  }
+
+  takePicture() {
+    this.canvas.getContext('2d').drawImage(this.video, 0, 0, 640, 480);
+  }
+
+  ngAfterContentInit() {
+    var media = this.media;
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+        media.src = window.URL.createObjectURL(stream);
+        media.play();
+      });
+    }
   }
 
   readUrl(event) {

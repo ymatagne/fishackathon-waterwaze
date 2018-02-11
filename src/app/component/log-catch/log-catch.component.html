@@ -3,13 +3,12 @@
     <h2 class="icon">Log Catch</h2>
     <app-progressbar [idx]="idx" [steps]="steps"></app-progressbar>
   </header>
+  <video #video width="640" height="480" autoplay></video>
+  <canvas #canvas width="640" height="480"></canvas>
 
-  <div *ngIf="idx!==2" class="divPicture">
-    <img class="picture" [src]="imageData" *ngIf="imageData" />
-  </div>
   <div *ngIf="idx==2" class="divPicture">
-    <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false [zoomControl]=false
-      [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [zoom]="14">
+    <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false
+      [zoomControl]=false [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [zoom]="14">
       <agm-marker [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [iconUrl]="'/assets/fish.png'"></agm-marker>
     </agm-map>
     <form #eventForm="ngForm">
@@ -31,6 +30,8 @@
 
   <footer *ngIf="idx==0">
     <img class="button-picture" (click)="imgFileInput.click()" src="/assets/photo-camera.png" />
+    <img class="button-picture" (click)="takePicture()" src="/assets/photo-camera.png" />
+
     <input hidden type="file" accept="image/*;capture=camera" #imgFileInput (change)="readUrl($event)" />
   </footer>
   <footer *ngIf="idx==1">
