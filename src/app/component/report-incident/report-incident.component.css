@@ -25,7 +25,6 @@ footer{
 }
 .picture{
     display: block;
-    width: 100vw;
     height: 66vh;
     margin-left: -4vh;
     object-fit: cover;

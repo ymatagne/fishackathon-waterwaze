@@ -1,13 +1,15 @@
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false">
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="true">
   <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'/assets/me.png'"></agm-marker>
   <agm-marker *ngFor="let event of events; let i = index" [longitude]="event.location.coordinates[0]" [latitude]="event.location.coordinates[1]"
-  [iconUrl]="getIcon(event)">
+    [iconUrl]="getIcon(event)">
 
-    <agm-info-window *ngIf="event.type!='user'">
-      <div >
-        <img class="eventPicture" src="/{{event.details.image}}" />
-      </div>
-    </agm-info-window>
+    <div *ngIf="event && event.details && event.details.image">
+      <agm-info-window>
+        <div>
+          <img class="eventPicture" src="/{{event.details.image}}" />
+        </div>
+      </agm-info-window>
+    </div>
   </agm-marker>
 </agm-map>
 <footer class="footer" (swipeleft)="swipe($event.type)">

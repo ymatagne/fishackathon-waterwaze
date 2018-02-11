@@ -47,6 +47,9 @@ export class MapComponent implements OnInit {
     }
   }
 
+  havePicture(event) {
+    return event.details && event.details.image &&(event.type === 'catch' || event.type === 'invasive' || event.type === 'waterway' || event.type === 'pollution' || event.type === 'fish');
+  }
   swipe(type) {
     switch (type) {
       case "swipeleft":
