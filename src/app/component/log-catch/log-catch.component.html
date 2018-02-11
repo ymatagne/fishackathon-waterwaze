@@ -15,15 +15,15 @@
     <form #eventForm="ngForm">
       <h3>Add a description</h3>
       <div>
-        <label>Type of Fich</label>
+        <label>Type of fish</label>
         <input type="text" name="event.details.type" id="type" required [(ngModel)]="event.details.type" autocomplete="off">
       </div>
       <div>
-        <label>Length</label>
+        <label>Length in inch</label>
         <input type="number" name="event.details.length" id="length" required [(ngModel)]="event.details.length" autocomplete="off">
       </div>
       <div>
-        <label>Weight (optional)</label>
+        <label>Weight (optional in pounds)</label>
         <input type="number" name="event.details.weigth" id="weigth" required [(ngModel)]="event.details.weigth" autocomplete="off">
       </div>
     </form>
