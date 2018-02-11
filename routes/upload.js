@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/', upload.single('image'), (req, res) => {
   if (req.file) {
-    res.json({success: true});
+    res.json({success: true, path: req.file.path});
   } else {
     res.json({success: true});
   }
