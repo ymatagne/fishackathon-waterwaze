@@ -3,6 +3,7 @@ import { GeolocalisationService } from '../../services/geolocalisation.service';
 import { EventsService } from '../../services/events.service';
 import { Routes, RouterModule, Router } from "@angular/router";
 import { Event } from '../../models/event';
+import { GeoPoint } from '../../models/geoPoint';
 
 @Component({
   selector: 'app-map',
@@ -20,10 +21,9 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.zoom = 16;
     this.events = []
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-    })
+    var geoPoint: GeoPoint = this.geoService.getYourPosition();
+    this.lng = Number.parseInt(geoPoint.coordinates[0].toString());
+    this.lat = Number.parseInt(geoPoint.coordinates[1].toString());
 
     this.eventService.getAllEvents().subscribe((data) => {
       this.events = data;
@@ -36,6 +36,14 @@ export class MapComponent implements OnInit {
         return "/assets/user.png";
       case "catch":
         return "/assets/fish.png"
+      case "invasive":
+        return "/assets/invasive.png";
+      case "waterway":
+        return "/assets/waterway.png"
+      case "pollution":
+        return "/assets/pollution.png"
+      case "algae":
+        return "/assets/algae.png"
     }
   }
 

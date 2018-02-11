@@ -42,8 +42,8 @@
   </div>
   <div *ngIf="idx==3" class="divPicture">
     <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false
-      [zoomControl]=false [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [zoom]="14">
-      <agm-marker [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [iconUrl]="getIcon(event)"></agm-marker>
+      [zoomControl]=false [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [zoom]="14">
+      <agm-marker [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [iconUrl]="getIcon(event)"></agm-marker>
     </agm-map>
     <form #eventForm="ngForm">
       <div *ngIf="event.type=='invasive'">

@@ -9,24 +9,20 @@ import { UserService } from './user.service';
 @Injectable()
 export class GeolocalisationService {
 
-  private location = new Subject<GeoPoint>();
-  location$ = this.location.asObservable();
-
   constructor(public userService: UserService) {
-    this.getYourPosition();
-    navigator.geolocation.watchPosition((position) => {
+  }
+
+  initGeolocalisation() {
+    navigator.geolocation.getCurrentPosition((position) => {
       var geoPoint = new GeoPoint();
       geoPoint.coordinates = [position.coords.longitude, position.coords.latitude];
-      this.location.next(geoPoint);
+      localStorage.setItem("location_ww", JSON.stringify(geoPoint));
+      this.userService.create(geoPoint);
     })
   }
 
   getYourPosition() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      var geoPoint = new GeoPoint();
-      geoPoint.coordinates = [position.coords.longitude, position.coords.latitude];
-      this.location.next(geoPoint);
-      this.userService.create(geoPoint);
-    })
+    return JSON.parse(localStorage.getItem("location_ww"));
   }
+
 }

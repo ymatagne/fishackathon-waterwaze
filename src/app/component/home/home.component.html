@@ -1,11 +1,11 @@
-<div class="home" (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
+<div class="home" (swiperight)="swipe('map')">
   <div class="logo">
     <h1 class="titleLogo">Water Watch</h1>
   </div>
 
   <div class="nav">
     <div class="bttopaz">
-      <a routerLink="catch">
+      <a (swipeleft)="swipe('catch')" (click)="swipe('catch')">
         <p>
           <em>Log Catch</em>
         </p>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="homeBtn btblue">
-      <a routerLink="incident">
+      <a (swipeleft)="swipe('incident')" (click)="swipe('incident')">
         <p>
           <em>Report Incident</em>
         </p>

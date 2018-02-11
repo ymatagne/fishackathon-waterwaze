@@ -14,14 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  swipe(id, type) {
-    switch (type) {
-      case "swipeleft":
-        this.router.navigate(['logcatch']);
-        return;
-      case "swiperight":
-        this.router.navigate(['map']);
-        return;
-    }
+  swipe(route) {
+    this.router.navigate([route]);
   }
 }

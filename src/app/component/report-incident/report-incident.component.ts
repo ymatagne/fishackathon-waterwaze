@@ -26,11 +26,8 @@ export class ReportIncidentComponent implements OnInit {
     this.event = new Event();
     this.event.details = new Detail();
     this.event.details.date = (Date.now()).toString();
-    this.event.location = new GeoPoint();
+    this.event.location = this.geoService.getYourPosition();
     var event = this.event;
-    navigator.geolocation.getCurrentPosition((position) => {
-      event.location.coordinates = [position.coords.latitude, position.coords.longitude];
-    })
   }
 
   setEvent(type: String) {

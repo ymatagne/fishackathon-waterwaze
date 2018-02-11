@@ -9,8 +9,8 @@
   </div>
   <div *ngIf="idx==2" class="divPicture">
     <agm-map *ngIf="event.location" [mapDraggable]=false [mapTypeControl]=false [panControl]=false [scrollwheel]=false [streetViewControl]=false [zoomControl]=false
-      [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [zoom]="14">
-      <agm-marker [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]" [iconUrl]="'/assets/fish.png'"></agm-marker>
+      [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [zoom]="14">
+      <agm-marker [latitude]="event.location.coordinates[1]" [longitude]="event.location.coordinates[0]" [iconUrl]="'/assets/fish.png'"></agm-marker>
     </agm-map>
     <form #eventForm="ngForm">
       <h3>Add a description</h3>

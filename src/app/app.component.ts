@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GeolocalisationService } from './services/geolocalisation.service';
-import { EventsService } from './services/events.service';
 
 
 @Component({
@@ -10,7 +9,7 @@ import { EventsService } from './services/events.service';
 })
 export class AppComponent {
 
-  constructor(public geoService: GeolocalisationService, public eventService: EventsService) {
-    
+  constructor(public geoService: GeolocalisationService) {
+    geoService.initGeolocalisation();
   }
 }

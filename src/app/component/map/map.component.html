@@ -1,9 +1,9 @@
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false">
   <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'/assets/me.png'"></agm-marker>
-  <agm-marker *ngFor="let event of events; let i = index" [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]"
+  <agm-marker *ngFor="let event of events; let i = index" [longitude]="event.location.coordinates[0]" [latitude]="event.location.coordinates[1]"
   [iconUrl]="getIcon(event)">
 
-    <agm-info-window *ngIf="event.type=='catch'">
+    <agm-info-window *ngIf="event.type!='user'">
       <div >
         <img class="eventPicture" src="/{{event.details.image}}" />
       </div>
