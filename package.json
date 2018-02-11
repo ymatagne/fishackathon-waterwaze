@@ -2,6 +2,9 @@
   "name": "fishackathon-waterwaze",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "8.9.4"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng build && nodemon ./bin/www",
@@ -11,7 +14,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "npm install -g @angular/cli"
   },
   "private": true,
   "dependencies": {
