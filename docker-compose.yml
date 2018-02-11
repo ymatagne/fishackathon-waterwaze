@@ -1,0 +1,11 @@
+version: '3'
+services:
+  superset:
+    image: tylerfowler/superset
+    restart: always
+    ports:
+      - "8088:8088"
+  dremio:
+    image: qxip/dremio:master
+    ports:
+      - "9087:9087"

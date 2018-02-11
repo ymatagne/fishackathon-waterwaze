@@ -1,0 +1,9 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="true">
+  <agm-marker *ngFor="let event of events; let i = index" [longitude]="event.location.coordinates[0]" [latitude]="event.location.coordinates[1]"
+    [iconUrl]="getIcon(event)">
+  </agm-marker>
+</agm-map>
+
+<div #chartTarget>
+  chart target
+</div>
