@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GeolocalisationService } from '../../services/geolocalisation.service';
 import { EventsService } from '../../services/events.service';
+import { Routes, RouterModule, Router } from "@angular/router";
 
 @Component({
   selector: 'app-map',
@@ -8,23 +9,33 @@ import { EventsService } from '../../services/events.service';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  public lat: Number;
-  public lng: Number;
+  public lat: number;
+  public lng: number;
   public zoom: Number;
   public events;
+
+  @ViewChild("map") map;
+
   ngOnInit() {
     this.zoom = 16;
     this.events = []
-  }
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.lat = position.coords.latitude;
+      this.lng = position.coords.longitude;
+    })
 
-  constructor(public geoService: GeolocalisationService, public eventService: EventsService) {  
-    geoService.location$.subscribe(
-      location => {
-        this.lat = location.coordinates[0];
-        this.lng = location.coordinates[1];
-      });
     this.eventService.getAllEvents().subscribe((data) => {
       this.events = data;
     })
+  }
+
+  swipe(id, type) {
+    switch (type) {
+      case "swipeleft":
+        this.router.navigate(['']);
+        return;
+    }
+  }
+  constructor(public geoService: GeolocalisationService, public eventService: EventsService, private router: Router) {
   }
 }

@@ -1,6 +1,9 @@
-<agm-map *ngIf="lat" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   <agm-marker *ngFor="let event of events; let i = index" [latitude]="event.location.coordinates[0]" [longitude]="event.location.coordinates[1]"
     [label]="event.type">
   </agm-marker>
 </agm-map>
+<footer class="footer" (swipeleft)="swipe(idx, $event.type)">
+  <img class="logo" src="/assets/logo.svg" />
+</footer>

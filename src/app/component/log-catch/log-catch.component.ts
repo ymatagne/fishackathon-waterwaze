@@ -6,6 +6,7 @@ import { GeolocalisationService } from '../../services/geolocalisation.service';
 import { Event } from '../../models/event';
 import { EventsService } from '../../services/events.service';
 import { Detail } from '../../models/detail';
+import { GeoPoint } from '../../models/geoPoint';
 
 @Component({
   selector: 'app-log-catch',
@@ -29,10 +30,11 @@ export class LogCatchComponent implements OnInit {
     this.event.type = "catch";
     this.event.details = new Detail();
     this.event.details.date = (Date.now()).toString();
-    this.geoService.location$.subscribe(
-      location => {
-        this.event.location = location;
-      });
+    this.event.location= new GeoPoint();
+    var event = this.event;
+    navigator.geolocation.getCurrentPosition((position) => {
+      event.location.coordinates = [position.coords.latitude, position.coords.longitude];
+    })
   }
 
   readUrl(event) {

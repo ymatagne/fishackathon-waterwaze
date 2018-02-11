@@ -1,3 +1,12 @@
 agm-map {
-    height: 100vh;
+    height: 90vh;
+}
+.footer{
+    background-color: #f4f9fc;
+    height: 10vh;
+}
+.logo{
+    display: block ;
+    margin: 0 auto;
+
 }
