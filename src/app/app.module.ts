@@ -26,14 +26,14 @@ import { environment } from '../environments/environment';
     BrowserModule,
     CommonModule,
     FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD9Wf_SdMfHT-PLengQFgBvC7eb2HERL38'
-    }),
     HttpClientModule,
     RouterModule.forRoot(
       routes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD9Wf_SdMfHT-PLengQFgBvC7eb2HERL38'
+    }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [GeolocalisationService, EventsService],
