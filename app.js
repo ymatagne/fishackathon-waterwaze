@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(express.static(path.join(__dirname, 'img')));
+app.use('/img', express.static(path.join(__dirname, 'img')));
 
 app.use('/api/v1/users', users);
 app.use('/api/v1/events', events);

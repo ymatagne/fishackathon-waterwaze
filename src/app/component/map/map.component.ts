@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { GeolocalisationService } from '../../services/geolocalisation.service';
 import { EventsService } from '../../services/events.service';
 import { Routes, RouterModule, Router } from "@angular/router";
+import { Event } from '../../models/event';
 
 @Component({
   selector: 'app-map',
@@ -27,6 +28,15 @@ export class MapComponent implements OnInit {
     this.eventService.getAllEvents().subscribe((data) => {
       this.events = data;
     })
+  }
+
+  getIcon(event: Event) {
+    switch (event.type) {
+      case "user":
+        return "/assets/user.png";
+      case "catch":
+        return "/assets/fish.png"
+    }
   }
 
   swipe(id, type) {

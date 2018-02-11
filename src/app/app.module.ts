@@ -33,7 +33,7 @@ import { ProgressbarComponent } from './component/progressbar/progressbar.compon
     HttpClientModule,
     RouterModule.forRoot(
       routes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false }
     ),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD9Wf_SdMfHT-PLengQFgBvC7eb2HERL38'
